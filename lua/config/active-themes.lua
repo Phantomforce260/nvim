@@ -6,6 +6,10 @@ local themes = {
         "dracula",
     },
     {
+        "dracula",
+        "dracula"
+    },
+    {
         "gruvbox",
         "gruvbox_dark",
     },
@@ -32,6 +36,22 @@ local themes = {
     {
         "rose-pine",
         "horizon"
+    },
+    {
+        "material",
+        "material"
+    },
+    {
+        "material-deep-ocean",
+        "material"
+    },
+    {
+        "material-palenight",
+        "material"
+    },
+    {
+        "ayu",
+        "ayu_dark"
     },
 
     -- Vim themes
