@@ -9,6 +9,9 @@ return {
         -- Telescope depends on plenary for utility functions
         dependencies = { "nvim-lua/plenary.nvim" },
         -- Configure Telescope: set up a couple of default keybindings
+        init = function()
+            require("functions.commands").theme_picker()
+        end,
     },
 
     {
@@ -16,5 +19,4 @@ return {
         -- with Telescope's picker UI for a more consistent UX.
         "nvim-telescope/telescope-ui-select.nvim"
     }
-
 }

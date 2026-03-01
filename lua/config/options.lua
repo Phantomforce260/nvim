@@ -44,19 +44,9 @@ vim.diagnostic.config({
     virtual_text = true
 })
 
+local commands = require("functions.commands")
+
 vim.api.nvim_create_autocmd("Colorscheme", {
     pattern = "*",
-    callback = function()
-        vim.cmd [[
-            hi Normal guibg=none ctermbg=none
-            hi NonText guibg=none ctermbg=none
-            hi NormalNC guibg=none ctermbg=none
-            hi SignColumn guibg=none ctermbg=none
-            hi VertSplit guibg=none ctermbg=none
-            hi StatusLine guibg=none ctermbg=none
-            hi TabLine guibg=none ctermbg=none
-            hi LineNr guibg=none ctermbg=none
-            hi EndOfBuffer guibg=none ctermbg=none
-        ]]
-    end,
+    callback = commands.transparent
 })

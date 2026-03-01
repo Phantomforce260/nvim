@@ -78,6 +78,7 @@ local themes = {
         "ayu_dark"
     }
 }
+
 -- Change the index to switch themes
 local useVimThemes = false
 local randomTheme = false
@@ -93,6 +94,7 @@ print("Using theme: " .. vimTheme)
 return {
     vimTheme = vimTheme,
     lualineTheme = lualineTheme,
+    allThemes = themes,
 }
 
 

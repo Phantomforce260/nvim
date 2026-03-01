@@ -1,5 +1,6 @@
 -- Set the leader key to semicolon
 local leader = "<leader>"
+local enter = "<CR>"
 
 -- Leader key mappings
 local leader_binds = function()
@@ -42,6 +43,13 @@ local leader_binds = function()
             "Switch focus to Neotree"
         },
 
+        -- yu: Change colorscheme with Telescope 
+        OpenTelescope = {
+            leader .. "yu",
+            ":ThemePicker" .. enter,
+            "Pick theme preset via telescope"
+        },
+
         -- e: Toggle Telescope file finder
         FindFiles = {
             leader .. "e",
@@ -52,27 +60,28 @@ local leader_binds = function()
         -- r: Toggle Neotree file explorer
         NeotreeToggle = {
             leader .. "r",
-            ":Neotree toggle<CR>",
+            ":Neotree toggle" .. enter,
             "Toggle Neotree file explorer"
         },
 
         -- ty: Open a new vertical terminal with toggleterm
         ToggleTerminal = {
             leader .. "ty",
-            ":TermNew size=70 direction=vertical<CR>",
+            ":TermNew size=70 direction=vertical" .. enter,
             "Toggle Vertical Terminal"
         },
 
+        -- tu: Open a new horizontal terminal with ToggleTerm
         ToggleHorizontal = {
             leader .. "tu",
-            ":TermNew size=15 direction=horizontal<CR>",
+            ":TermNew size=15 direction=horizontal" .. enter,
             "Toggle Horizontal Terminal"
         },
 
         -- th: Hide/Show all terminals
         ToggleAllTerminals = {
             leader .. "th",
-            ":ToggleTerm<CR>",
+            ":ToggleTerm" .. enter,
             "Hide/Show all terminals"
         },
 
@@ -86,7 +95,6 @@ local leader_binds = function()
 end
 
 local movement_binds = {
-
     -- Ctrl + (h/j/k/l OR Arrows): Move between windows
     {"<C-h>", "<C-w>h", "Move to left window"},
     {"<C-j>", "<C-w>j", "Move to bottom window"},
