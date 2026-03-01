@@ -5,6 +5,8 @@ colorscheme habamax           " Sets Vim colorscheme
 " - slate
 " - habamax
 " - desert
+" - industry
+" - sorbet
 
 set splitbelow              " New horizontal splits will be below the current window
 set splitright              " New vertical splits will be to the right of the current window
@@ -38,7 +40,7 @@ set encoding=utf-8          " Sets default encoding to UTF-8
 set exrc
 set secure
 
-"set wrap                   " Enable this to allow overflowing lines to wrap
+set wrap                    " Enable this to allow overflowing lines to wrap
 
 " I type fast, and I have a habit of accidentally typing :W and :Q instead of :w and :q.
 " So I just binded :W and :Q to their lowercase counterparts.

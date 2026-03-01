@@ -81,7 +81,7 @@ local themes = {
 
 -- Change the index to switch themes
 local useVimThemes = false
-local randomTheme = false
+local randomTheme = true
 
 math.randomseed(os.time())
 local themeIndex = randomTheme and math.random(useVimThemes and #themes or #themes - 5) or 1
