@@ -6,10 +6,9 @@
 return {
     -- The main Barbar plugin
     "romgrk/barbar.nvim",
-    -- Dependencies for Barbar: Gitsigns for git integration and web-devicons for file icons
-    dependencies = { 
-        "lewis6991/gitsigns.nvim",
-        "nvim-tree/nvim-web-devicons" 
+    -- Dependencies for Barbar:  web-devicons for file icons
+    dependencies = {
+        "nvim-tree/nvim-web-devicons"
     },
 
     -- Disable automatic setup to allow custom configuration
