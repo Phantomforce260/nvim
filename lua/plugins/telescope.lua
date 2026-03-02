@@ -1,4 +1,4 @@
--- Telescope is a highly extendable fuzzy finder for Neovim that can search files, buffers,
+-- Telescope is a highly extendable fuzzy finder that can search files, buffers,
 -- help tags, live grep, LSP locations and more.
 return {
     {

@@ -1,4 +1,4 @@
--- Lualine is a statusline plugin for Neovim. It provides a highly customizable
+-- Lualine is a statusline plugin. It provides a highly customizable
 -- and visually appealing statusline that can display various information
 -- about the current editing session, such as file name, mode, branch, diagnostics, etc
 
