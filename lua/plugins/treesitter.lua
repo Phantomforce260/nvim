@@ -2,13 +2,13 @@
 --  more accurate syntax highlighting, better indentation rules, and the
 --  foundation for advanced editor features (textobjects, refactoring, etc.).
 
-return {
-    -- Main Treesitter plugin (parsers + modules)
-    "nvim-treesitter/nvim-treesitter",
+return require("functions.git").plugin("Treesitter", {
+    --name = "nvim-treesitter",
+    --lazy = false,
     -- Run :TSUpdate after installing/updating the plugin to update parsers
     build = ":TSUpdate",
     config = function()
-        local configs = require("nvim-treesitter.configs")
+        local configs = require("nvim-treesitter.config")
 
         -- Configure Treesitter modules and parser installation
         configs.setup({
@@ -46,4 +46,4 @@ return {
             indent = { enable = true }
         })
     end
-}
+})

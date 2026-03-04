@@ -1,11 +1,9 @@
-return {
-    "catppuccin/nvim",
+return require("functions.git").plugin("Catppuccin", {
     lazy = false,
-    name = "catppuccin",
     priority = 1000,
     config = function()
         require("catppuccin").setup({
-            transparent_background = true,
+            transparent_background = true
         })
     end
-}
+})

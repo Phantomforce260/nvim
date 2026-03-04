@@ -2,14 +2,14 @@
 -- It shows a header (ASCII art), menu buttons for common actions, and a footer with plugin stats, version, and date/time.
 -- It uses 'nvim-web-devicons' for icons in the menu.
 
+local git = require("functions.git")
+
 --- @type LazyPluginSpec
-return {
-    -- Main Alpha plugin (dashboard)
-    "goolord/alpha-nvim",
+return git.plugin("Alpha",{
     -- Show dashboard on VimEnter
     event = "VimEnter",
     -- Use devicons for pretty icons in menu
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = { git.plugin("Web-Devicons") },
 
     -- Dashboard options: header, buttons, highlights
     opts = function()
@@ -100,4 +100,4 @@ return {
         -- Disable folding in the dashboard buffer
         vim.cmd([[autocmd FileType alpha setlocal nofoldenable]])
     end
-}
+})

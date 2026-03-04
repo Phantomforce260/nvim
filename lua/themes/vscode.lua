@@ -1,5 +1,4 @@
-return {
-    "Mofiqul/vscode.nvim",
+return require("functions.git").plugin("VSCode",{
     lazy = false,
     priority = 1000,
     config = function()
@@ -7,4 +6,4 @@ return {
             transparent = true
         })
     end
-}
+})

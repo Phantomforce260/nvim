@@ -2,6 +2,4 @@
 -- adding signs to columns to signifiy changes, as well
 -- as showing buffer revision history, etc.
 
-return {
-    "lewis6991/gitsigns.nvim",
-}
+return require("functions.git").plugin("Gitsigns")

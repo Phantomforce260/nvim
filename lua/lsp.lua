@@ -89,7 +89,12 @@ return {
             -- Autocompletion
             { "hrsh7th/nvim-cmp" },         -- Required
             { "hrsh7th/cmp-nvim-lsp" },     -- Required
-            { "L3MON4D3/LuaSnip" },         -- Required
+
+            -- Required
+            { 
+                "L3MON4D3/LuaSnip",
+                name = "luasnip"
+            },
         },
         config = function()
             local lsp = require("lsp-zero").preset({})

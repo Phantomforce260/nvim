@@ -1,22 +1,20 @@
 -- Telescope is a highly extendable fuzzy finder that can search files, buffers,
 -- help tags, live grep, LSP locations and more.
-return {
-    {
-        -- The main Telescope plugin (fuzzy finder)
-        "nvim-telescope/telescope.nvim",
-        -- Pin to a stable tag to avoid unexpected breaking changes
-        tag = "0.1.8",
-        -- Telescope depends on plenary for utility functions
-        dependencies = { "nvim-lua/plenary.nvim" },
-        -- Configure Telescope: set up a couple of default keybindings
-        init = function()
-            require("functions.commands").theme_picker()
-        end,
-    },
+local git = require("functions.git")
 
-    {
-        -- Optional UI extension: replaces some default vim.ui.select prompts
-        -- with Telescope's picker UI for a more consistent UX.
-        "nvim-telescope/telescope-ui-select.nvim"
-    }
+return {
+    git.plugin("Telescope", {
+            -- Pin to a stable tag to avoid unexpected breaking changes
+            tag = "0.1.8",
+            -- Telescope depends on plenary for utility functions
+            dependencies = { git.plugin("Plenary") },
+            -- Configure Telescope: set up a couple of default keybindings
+            init = function()
+                require("functions.commands").theme_picker()
+            end
+    }),
+
+    -- Optional UI extension: replaces some default vim.ui.select prompts
+    -- with Telescope's picker UI for a more consistent UX.
+    git.plugin("Telescope-UI-Select")
 }

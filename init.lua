@@ -20,14 +20,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Load plugins and themes
-require("lazy").setup({
-    spec = {
+require("lazy").setup(
+    {
         { import = "plugins" },
         { import = "themes" },
-
         { import = "lsp" },
+    },
+    {
+        rocks = { enabled = false }
     }
-})
+)
 
 vim.cmd.colorscheme(ActiveThemes.vimTheme)
 

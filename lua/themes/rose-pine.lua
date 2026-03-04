@@ -1,13 +1,9 @@
-return {
-	"rose-pine/neovim",
+return require("functions.git").plugin("Rose-Pine", {
     lazy = false,
     priority = 1000,
-	name = "rose-pine",
 	config = function()
         require("rose-pine").setup({
-            styles = {
-                transparency = true
-            }
+            styles = { transparency = true }
         })
 	end
-}
+})

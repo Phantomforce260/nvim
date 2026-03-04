@@ -86,7 +86,7 @@ local randomTheme = true
 math.randomseed(os.time())
 local themeIndex = randomTheme and math.random(useVimThemes and #themes or #themes - 5) or 1
 
-local vimTheme = randomTheme and themes[themeIndex][1] or "catppuccin"
+local vimTheme = randomTheme and themes[themeIndex][1] or "habamax"
 local lualineTheme = randomTheme and themes[themeIndex][2] or "auto"
 
 print("Using theme: " .. vimTheme)

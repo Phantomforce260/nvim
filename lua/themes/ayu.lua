@@ -1,7 +1,5 @@
-return {
-    "Shatur/neovim-ayu",
+return require("functions.git").plugin("Ayu", {
     lazy = false,
-    name = "ayu",
     priority = 1000,
     config = function()
         require("ayu").setup({
@@ -16,7 +14,7 @@ return {
                 CursorColumn = { bg = "None" },
                 VertSplit = { bg = "None" },
                 Comment = {italic = false }
-            },
+            }
         })
     end
-}
+})

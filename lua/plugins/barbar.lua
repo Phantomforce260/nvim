@@ -1,15 +1,15 @@
--- Barbar  provides a tabline interface for managing buffers. 
+-- Barbar provides a tabline interface for managing buffers. 
 -- It allows users to easily switch between open buffers, close buffers,
 -- and view buffer information in a visually appealing tabline at the 
 -- top of the Neovim window.
 
-return {
-    -- The main Barbar plugin
-    "romgrk/barbar.nvim",
+local git = require("functions.git")
+
+return git.plugin("Barbar",{
     -- Dependencies for Barbar: Gitsigns for file changes, web-devicons for file icons
     dependencies = {
-        "lewis6991/gitsigns.nvim",
-        "nvim-tree/nvim-web-devicons"
+        git.plugin("Gitsigns"),
+        git.plugin("Web-Devicons")
     },
 
     -- Disable automatic setup to allow custom configuration
@@ -20,5 +20,5 @@ return {
     -- Configuration options for Barbar
     opts = {},
     -- Version constraint to ensure compatibility
-    version = "^1.0.0",
-}
+    version = "^1.0.0"
+})

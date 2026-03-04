@@ -1,10 +1,9 @@
 -- Neo-tree is a file explorer plugin that provides a
 -- sidebar tree view of the filesystem, buffers, and git status.
 
-return {
-    -- Main Neo-tree plugin
-    "nvim-neo-tree/neo-tree.nvim",
+local git = require("functions.git")
 
+return git.plugin("Neo-Tree", {
     -- Load Neo-tree when the :Neotree command is run or when <leader>z is pressed
     cmd = "Neotree",
 
@@ -12,9 +11,9 @@ return {
     branch = "v3.x",
     -- Neo-tree dependencies: plenary, devicons, nui
     dependencies = {
-        "nvim-lua/plenary.nvim",
-        "nvim-tree/nvim-web-devicons", -- optional, for file icons
-        "MunifTanjim/nui.nvim",
+        git.plugin("Plenary"),
+        git.plugin("Web-Devicons"),
+        git.plugin("NUI")
     },
 
     -- Configure Neo-tree with custom settings
@@ -24,10 +23,8 @@ return {
             enable_git_status = true,
             open_on_setup = false,
             filesystem = {
-                filtered_items = {
-                    visible = true,
-                }
-            },
+                filtered_items = { visible = true }
+            }
         })
     end
-}
+})

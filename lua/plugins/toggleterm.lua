@@ -3,9 +3,7 @@
 -- instances, making it easier to run shell commands and interact with the terminal
 -- without leaving the Neovim environment.
 
-return {
-    -- The main Toggleterm plugin
-    "akinsho/toggleterm.nvim",
+return require("functions.git").plugin("ToggleTerm", {
     -- Load Toggleterm when the 'ToggleTerm' command is used
-    config = true,
-}
+    config = true
+})

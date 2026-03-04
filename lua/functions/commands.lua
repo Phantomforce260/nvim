@@ -63,6 +63,8 @@ local function theme_picker()
     end
 
     vim.api.nvim_create_user_command("ThemePicker", function()
+        local actions = require("telescope.actions")
+
         local reversed_themes = {}
         for i = #active_themes.allThemes, 1, -1 do
             table.insert(reversed_themes, active_themes.allThemes[i])
@@ -87,12 +89,12 @@ local function theme_picker()
             attach_mappings = function(prompt_bufnr, map)
 
                 local function preview_prev()
-                    require("telescope.actions").move_selection_previous(prompt_bufnr)
+                    actions.move_selection_previous(prompt_bufnr)
                     pick_theme()
                 end
 
                 local function preview_next()
-                    require("telescope.actions").move_selection_next(prompt_bufnr)
+                    actions.move_selection_next(prompt_bufnr)
                     pick_theme()
                 end
 
@@ -111,7 +113,7 @@ local function theme_picker()
                 -- On Enter, select and close picker
                 map("i", "<CR>", function()
                     if pick_theme() then
-                        require("telescope.actions").close(prompt_bufnr)
+                        actions.close(prompt_bufnr)
                     end
                 end)
 
@@ -125,7 +127,7 @@ local function theme_picker()
                             options = { theme = current_lualine_theme }
                         })
                     end
-                    require("telescope.actions").close(prompt_bufnr)
+                    actions.close(prompt_bufnr)
                 end)
                 return true
             end,

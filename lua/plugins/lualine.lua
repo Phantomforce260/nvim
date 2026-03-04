@@ -2,10 +2,7 @@
 -- and visually appealing statusline that can display various information
 -- about the current editing session, such as file name, mode, branch, diagnostics, etc
 
-return {
-    -- The main Lualine plugin
-    "nvim-lualine/lualine.nvim",
-
+return require("functions.git").plugin("Lualine", {
     -- Lualine depends on 'nvim-web-devicons' for file type icons
     -- However, since we already have it installed via other plugins,
     -- we don't need to specify it again here.
@@ -15,8 +12,8 @@ return {
     config = function()
         require("lualine").setup({
             options = {
-                theme = ActiveThemes.lualineTheme,
-            },
+                theme = ActiveThemes.lualineTheme
+            }
         })
     end
-}
+})
