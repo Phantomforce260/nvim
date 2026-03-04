@@ -4,7 +4,7 @@
 
 return require("functions.git").plugin("Treesitter", {
     --name = "nvim-treesitter",
-    --lazy = false,
+    lazy = false,
     -- Run :TSUpdate after installing/updating the plugin to update parsers
     build = ":TSUpdate",
     config = function()
