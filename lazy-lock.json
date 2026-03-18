@@ -1,5 +1,6 @@
 {
   "Alpha": { "branch": "main", "commit": "a9d8fb72213c8b461e791409e7feabb74eb6ce73" },
+  "Andromeda": { "branch": "master", "commit": "61aa284566ccef20f095f82931960b2d05a88e69" },
   "Autopairs": { "branch": "master", "commit": "59bce2eef357189c3305e25bc6dd2d138c1683f5" },
   "Ayu": { "branch": "master", "commit": "e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8" },
   "Barbar": { "branch": "master", "commit": "53b5a2f34b68875898f0531032fbf090e3952ad7" },

@@ -1,3 +1,5 @@
+-- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
+
 local themes = {
 
     -- Neovim themes
@@ -47,35 +49,39 @@ local themes = {
     },
     {
         "material-palenight",
-        "material"
+        "palenight"
     },
     {
         "ayu",
         "ayu_dark"
     },
+    {
+        "andromeda",
+        "ayu_mirage"
+    },
 
     -- Vim themes
     {
         "slate",
-        "ayu_dark"
+        "auto"
     },
     {
         "habamax",
-        "nightfly"
+        "auto"
     },
     {
         "lunaperche",
-        "nightfly"
+        "auto"
     },
 
     -- Vim 9.1+ themes
     {
         "retrobox",
-        "gruvbox_dark"
+        "auto"
     },
     {
         "unokai",
-        "ayu_dark"
+        "auto"
     }
 }
 
@@ -96,5 +102,3 @@ return {
     lualineTheme = lualineTheme,
     allThemes = themes,
 }
-
-
