@@ -3,86 +3,47 @@
 local themes = {
 
     -- Neovim themes
-    {
-        "catppuccin",
-        "dracula",
-    },
-    {
-        "dracula",
-        "dracula"
-    },
-    {
-        "gruvbox",
-        "gruvbox_dark",
-    },
-    {
-        "tokyonight",
-        "nightfly",
-    },
-    {
-        "nord",
-        "nord",
-    },
-    {
-        "mellow",
-        "seoul256"
-    },
-    {
-        "onedark",
-        "onedark"
-    },
-    {
-        "vscode",
-        "vscode"
-    },
-    {
-        "rose-pine",
-        "horizon"
-    },
-    {
-        "material",
-        "material"
-    },
-    {
-        "material-deep-ocean",
-        "material"
-    },
-    {
-        "material-palenight",
-        "palenight"
-    },
-    {
-        "ayu",
-        "ayu_dark"
-    },
-    {
-        "andromeda",
-        "ayu_mirage"
-    },
+    { "andromeda", "ayu_mirage" },
+
+    { "ayu", "ayu_dark" },
+
+    { "catppuccin", "dracula", },
+
+    { "dracula", "dracula" },
+
+    { "gruvbox", "gruvbox_dark" },
+
+    { "kanagawa", "gruvbox_dark" },
+
+    { "tokyonight", "nightfly" },
+
+    { "nord", "nord" },
+
+    { "mellow", "seoul256" },
+
+    { "onedark", "onedark" },
+
+    { "vscode", "vscode" },
+
+    { "rose-pine", "horizon" },
+
+    { "material", "material" },
+
+    { "material-deep-ocean", "material" },
+
+    { "material-palenight", "palenight" },
 
     -- Vim themes
-    {
-        "slate",
-        "auto"
-    },
-    {
-        "habamax",
-        "auto"
-    },
-    {
-        "lunaperche",
-        "auto"
-    },
+    { "slate", "auto" },
+
+    { "habamax", "auto" },
+
+    { "lunaperche", "auto" },
 
     -- Vim 9.1+ themes
-    {
-        "retrobox",
-        "auto"
-    },
-    {
-        "unokai",
-        "auto"
-    }
+    { "retrobox", "auto" },
+
+    { "unokai", "auto" }
 }
 
 -- Change the index to switch themes

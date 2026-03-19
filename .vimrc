@@ -1,6 +1,6 @@
 let mapleader = ";"
 
-colorscheme habamax           " Sets Vim colorscheme
+colorscheme slate           " Sets Vim colorscheme
 " Vim themes I like:
 " - slate
 " - habamax
@@ -106,4 +106,3 @@ nnoremap <leader>tu :terminal<CR>
 
 " Press Ctrl-P to autocomplete a keyword
 set completeopt=menuone,noinsert,noselect
-
