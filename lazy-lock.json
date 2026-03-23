@@ -5,6 +5,7 @@
   "Ayu": { "branch": "master", "commit": "e5a9f0fa2918d6b5f57c21b3ac014314ee5e41c8" },
   "Barbar": { "branch": "master", "commit": "53b5a2f34b68875898f0531032fbf090e3952ad7" },
   "Catppuccin": { "branch": "main", "commit": "c4d475e4b5684747cde9b3f849186af7837d4397" },
+  "Colorizer": { "branch": "master", "commit": "a065833f35a3a7cc3ef137ac88b5381da2ba302e" },
   "Dracula": { "branch": "main", "commit": "ae752c13e95fb7c5f58da4b5123cb804ea7568ee" },
   "Gitsigns": { "branch": "main", "commit": "9f3c6dd7868bcc116e9c1c1929ce063b978fa519" },
   "Gruvbox": { "branch": "main", "commit": "561126520034a1dac2f78ab063db025d12555998" },

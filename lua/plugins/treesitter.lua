@@ -15,7 +15,7 @@ return require("functions.git").plugin("Treesitter", {
             -- List of parsers to ensure are installed. Parsers are the language
             -- grammars Treesitter uses to parse files. Keep this list focused
             -- on languages you work with to avoid long install times.
-            ensure_installed = { 
+            ensure_installed = {
                 -- Common / required languages
                 "lua",
                 "c",

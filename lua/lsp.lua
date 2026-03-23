@@ -70,10 +70,7 @@ return {
                             },
                         },
                     })
-                end,
-
-
-
+                end
             })
         end
     },

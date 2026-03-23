@@ -1,4 +1,4 @@
-return require("functions.git").plugin("VSCode",{
+return require("functions.git").plugin("VSCode", {
     lazy = false,
     priority = 1000,
     config = function()

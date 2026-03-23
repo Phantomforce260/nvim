@@ -172,6 +172,24 @@ vim.api.nvim_create_user_command(
     {}
 )
 
+vim.api.nvim_create_user_command(
+    "Wq",
+    function() vim.cmd("wq") end, 
+    {}
+)
+
+vim.api.nvim_create_user_command(
+    "Qa",
+    function() vim.cmd("qa") end, 
+    {}
+)
+
+vim.api.nvim_create_user_command(
+    "Wqa",
+    function() vim.cmd("wqa") end, 
+    {}
+)
+
 return {
     leader_binds = leader_binds,
     movement_binds = movement_binds,

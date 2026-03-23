@@ -5,7 +5,7 @@
 
 local git = require("functions.git")
 
-return git.plugin("Barbar",{
+return git.plugin("Barbar", {
     -- Dependencies for Barbar: Gitsigns for file changes, web-devicons for file icons
     dependencies = {
         git.plugin("Gitsigns"),

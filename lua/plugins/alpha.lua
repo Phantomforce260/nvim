@@ -5,7 +5,7 @@
 local git = require("functions.git")
 
 --- @type LazyPluginSpec
-return git.plugin("Alpha",{
+return git.plugin("Alpha", {
     -- Show dashboard on VimEnter
     event = "VimEnter",
     -- Use devicons for pretty icons in menu

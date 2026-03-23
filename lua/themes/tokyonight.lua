@@ -1,4 +1,4 @@
-return require("functions.git").plugin("Tokyonight",{
+return require("functions.git").plugin("Tokyonight", {
     lazy = false,
     priority = 1000,
     config = function()

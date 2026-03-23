@@ -4,7 +4,7 @@
 
 local git = require("functions.git")
 
-return git.plugin("Oil",{
+return git.plugin("Oil", {
 
     -- Configuration options for Oil
     opts =  {},

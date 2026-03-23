@@ -4,7 +4,6 @@ return require("functions.git").plugin("Andromeda", {
     config = function()
         require("andromeda").setup({
             transparent = true,
-
             styles = {
                 comments = { italic = false },
                 keywords = { italic = false },

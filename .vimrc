@@ -47,6 +47,9 @@ set wrap                    " Enable this to allow overflowing lines to wrap
 
 command W w
 command Q q
+command Wq wq
+command Qa qa
+command Wqa wqa
 
 " In Insert Mode, change the cursor from a block to the thin line. This should
 " have no effect on Windows terminals.
