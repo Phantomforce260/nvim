@@ -1,12 +1,18 @@
 let mapleader = ";"
 
-colorscheme slate           " Sets Vim colorscheme
+colorscheme zaibatsu           " Sets Vim colorscheme
 " Vim themes I like:
 " - slate
 " - habamax
 " - desert
 " - industry
 " - sorbet
+" - lunaperche
+
+" Vim 9.1+
+" - retrobox
+" - unokai
+" - zaibatsu
 
 set splitbelow              " New horizontal splits will be below the current window
 set splitright              " New vertical splits will be to the right of the current window
@@ -40,7 +46,8 @@ set encoding=utf-8          " Sets default encoding to UTF-8
 set exrc
 set secure
 
-set wrap                    " Enable this to allow overflowing lines to wrap
+"set wrap                   " Enable this to allow overflowing lines to wrap
+set nowrap                  " Enable this to allow overflowing lines to continue out of the window view.
 
 " I type fast, and I have a habit of accidentally typing :W and :Q instead of :w and :q.
 " So I just binded :W and :Q to their lowercase counterparts.
@@ -51,6 +58,22 @@ command Wq wq
 command Qa qa
 command Wqa wqa
 
+" Automatically complete parentheses, brackets, braces, and quotes
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+
+inoremap <expr> ) getline('.')[col('.') - 1] == ')' ? "\<Right>" : ")"
+inoremap <expr> ] getline('.')[col('.') - 1] == ']' ? "\<Right>" : "]"
+inoremap <expr> } getline('.')[col('.') - 1] == '}' ? "\<Right>" : "}"
+
+inoremap <expr> " getline('.')[col('.') - 1] == '"' ? "\<Right>" : '""<Left>'
+inoremap <expr> ' getline('.')[col('.') - 1] == "'" ? "\<Right>" : "''<Left>"
+inoremap <expr> ` getline('.')[col('.') - 1] == '`' ? "\<Right>" : '``<Left>'
+
+inoremap <expr> <BS> <SID>SmartBackspace()
+inoremap <expr> <CR> <SID>SmartEnter()
+
 " In Insert Mode, change the cursor from a block to the thin line. This should
 " have no effect on Windows terminals.
 let &t_SI = "\e[5 q"
@@ -58,14 +81,14 @@ let &t_EI = "\e[2 q"
 
 " Make the background transparent. My terminal is transparent and I want to
 " keep my background visible.
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
 
 " When undodir is enabled, persistent backups are stored in the cwd. This is
 " really annoying, so I move them to a dedicated local cache.
 for dir in ['~/.vim/backup', '~/.vim/swap', '~/.vim/undo']
-  if !isdirectory(expand(dir))
-    call mkdir(expand(dir), 'p', 0700)
-  endif
+    if !isdirectory(expand(dir))
+        call mkdir(expand(dir), 'p', 0700)
+    endif
 endfor
 
 set backupdir=~/.vim/backup// " Directory for backup files (copies of original files before saving)
@@ -100,6 +123,47 @@ nnoremap <C-Left>  <C-w>h
 nnoremap <C-Down>  <C-w>j
 nnoremap <C-Up>    <C-w>k
 nnoremap <C-Right> <C-w>l
+
+" Backspace function that removes brace pairs
+function! s:SmartBackspace()
+    let line = getline('.')
+    let col = col('.')
+
+    if col <= 1
+        return "\<BS>"
+    endif
+
+    let prev = line[col - 2]
+    let next = col <= len(line) ? line[col - 1] : ''
+
+    if (prev == '(' && next == ')') ||
+        \ (prev == '[' && next == ']') ||
+        \ (prev == '{' && next == '}') ||
+        \ (prev == '"' && next == '"') ||
+        \ (prev == "'" && next == "'") ||
+        \ (prev == '`' && next == '`')
+        return "\<Del>\<BS>"
+    endif
+
+    return "\<BS>"
+endfunction
+
+" Enter function that indents braces
+function! s:SmartEnter()
+    let line = getline('.')
+    let col = col('.')
+
+    let prev = col > 1 ? line[col - 2] : ''
+    let next = col <= len(line) ? line[col - 1] : ''
+
+    if (prev == '(' && next == ')') ||
+        \ (prev == '{' && next == '}') ||
+        \ (prev == '[' && next == ']')
+        return "\<CR>\<CR>\<Up>"
+    endif
+
+    return "\<CR>"
+endfunction
 
 " Terminal mode: Esc to exit to normal mode
 set termwinkey=<Esc>
