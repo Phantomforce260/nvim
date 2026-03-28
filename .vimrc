@@ -1,18 +1,24 @@
 let mapleader = ";"
 
-colorscheme zaibatsu           " Sets Vim colorscheme
-" Vim themes I like:
-" - slate
-" - habamax
-" - desert
-" - industry
-" - sorbet
-" - lunaperche
+let g:my_themes = [
+    \ 'slate',
+    \ 'habamax',
+    \ 'desert',
+    \ 'sorbet',
+    \ 'lunaperche',
+    \ 'retrobox',
+    \ 'unokai',
+    \ 'zaibatsu',
+    \ ]
 
-" Vim 9.1+
-" - retrobox
-" - unokai
-" - zaibatsu
+" Pick a random theme
+let g:rand_index = rand() % len(g:my_themes)
+
+try
+    execute 'colorscheme ' . g:my_themes[g:rand_index]
+catch
+    colorscheme industry
+endtry
 
 set splitbelow              " New horizontal splits will be below the current window
 set splitright              " New vertical splits will be to the right of the current window
@@ -79,9 +85,13 @@ inoremap <expr> <CR> <SID>SmartEnter()
 let &t_SI = "\e[5 q"
 let &t_EI = "\e[2 q"
 
+let transparent_bg = 0
+
 " Make the background transparent. My terminal is transparent and I want to
 " keep my background visible.
-"hi Normal guibg=NONE ctermbg=NONE
+if transparent_bg
+    hi Normal guibg=NONE ctermbg=NONE
+endif
 
 " When undodir is enabled, persistent backups are stored in the cwd. This is
 " really annoying, so I move them to a dedicated local cache.
