@@ -1,48 +1,30 @@
 -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
 
 local themes = {
-
     -- Neovim themes
     { "andromeda", "ayu_mirage" },
-
     { "ayu", "ayu_dark" },
-
     { "catppuccin", "dracula", },
-
     { "dracula", "dracula" },
-
     { "gruvbox", "gruvbox_dark" },
-
     { "kanagawa", "gruvbox_dark" },
-
     { "tokyonight", "nightfly" },
-
     { "nord", "nord" },
-
     { "mellow", "seoul256" },
-
     { "onedark", "onedark" },
-
     { "vscode", "vscode" },
-
     { "rose-pine", "horizon" },
-
     { "material", "material" },
-
     { "material-deep-ocean", "material" },
-
     { "material-palenight", "palenight" },
 
     -- Vim themes
     { "slate", "auto" },
-
     { "habamax", "auto" },
-
     { "lunaperche", "auto" },
 
     -- Vim 9.1+ themes
     { "retrobox", "auto" },
-
     { "unokai", "auto" }
 }
 

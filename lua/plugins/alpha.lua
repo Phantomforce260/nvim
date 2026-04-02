@@ -1,6 +1,6 @@
--- Alpha is a plugin that displays a start screen when Neovim launches (on VimEnter).
--- It shows a header (ASCII art), menu buttons for common actions, and a footer with plugin stats, version, and date/time.
--- It uses 'nvim-web-devicons' for icons in the menu.
+-- Alpha displays a start screen when Neovim launches (on VimEnter). It shows a header 
+-- (ASCII art), menu buttons for common actions, and a footer with plugin stats, version, 
+-- and date/time. It uses 'nvim-web-devicons' for icons in the menu.
 
 local git = require("functions.git")
 

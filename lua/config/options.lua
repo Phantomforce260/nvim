@@ -1,5 +1,4 @@
 local opt = vim.opt
-local o = vim.o
 
 opt.clipboard = "unnamedplus"           -- Synchronizes the system clipboard with Neovim's clipboard
 opt.splitbelow = true                   -- New horizontal splits will be below the current window
@@ -36,17 +35,17 @@ opt.signcolumn = "yes"                  -- Always shows the sign column to preve
 vim.cmd("syntax enable")                -- Enables syntax highlighting
 vim.cmd("set whichwrap+=<,>,[,],h,l")   -- Allows the cursor to move to the next/previous line when hitting these keys
 
-o.background = "dark"
-o.exrc = true
-o.secure = true
+opt.background = "dark"                 -- Sets the background theme. Either "light" or "dark"
+opt.exrc = true                         -- Allows Neovim to read local .nvimrc files in the current directory
+opt.secure = true                       -- Disables potentially dangerous commands in local .nvimrc files
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true                 -- Enables virtual text for LSPs to display warnings and errors inline
 })
 
 local commands = require("functions.commands")
 
 vim.api.nvim_create_autocmd("Colorscheme", {
     pattern = "*",
-    callback = commands.transparent
+    callback = commands.transparent     -- Make all backgrounds transparent
 })

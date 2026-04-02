@@ -5,6 +5,7 @@ let g:my_themes = [
     \ 'habamax',
     \ 'desert',
     \ 'sorbet',
+    \ 'industry',
     \ 'lunaperche',
     \ 'retrobox',
     \ 'unokai',
@@ -20,37 +21,42 @@ catch
     colorscheme industry
 endtry
 
+set clipboard=unnamedplus   " Synchronizes the system clipboard with Neovim's clipboard
+
 set splitbelow              " New horizontal splits will be below the current window
 set splitright              " New vertical splits will be to the right of the current window
 
 set mouse=a                 " Enables using the mouse in (a)ll Vim modes
 
-set ignorecase              " Case insensitive searching
 set hlsearch                " Highlights all search results
-
-set number                  " Shows line numbers
-set relativenumber          " Shows relative line numbers
+set virtualedit=block       " Creates virtual spaces at the end of a line for easier Visual Block selections
 
 set termguicolors           " Enables 24-bit RGB color in the terminal
 set cursorline              " Highlights the line where the cursor is located
+
+set ignorecase              " Case insensitive searching
+
+set number                  " Shows line numbers
+set relativenumber          " Shows relative line numbers
 
 set tabstop=4               " Number of spaces that a <Tab> counts for
 set expandtab               " Converts tabs to spaces
 set shiftwidth=4            " Number of spaces to use for each step of (auto)indent
 set softtabstop=0           " Number of spaces that a <Tab> counts for while performing editing operations
-set autoindent              " Enables automatic indentation
 set smarttab                " Makes tabbing smarter
+set autoindent              " Enables automatic indentation
 
+set encoding=utf-8          " Sets default encoding to UTF-8
 set showmatch               " Highlights matching parentheses
 
 set signcolumn=yes          " Always shows the sign column to prevent text shifting
-set virtualedit=block       " Creates virtual spaces at the end of a line for easier Visual Block selections
 
 syntax enable               " Enables syntax highlighting
-set encoding=utf-8          " Sets default encoding to UTF-8
 
-set exrc
-set secure
+set background=dark         " Sets the background theme. Either "light" or "dark"
+
+set exrc                    " Allows Neovim to read local .nvimrc files in the current directory
+set secure                  " Disables potentially dangerous commands in local .nvimrc files
 
 "set wrap                   " Enable this to allow overflowing lines to wrap
 set nowrap                  " Enable this to allow overflowing lines to continue out of the window view.
