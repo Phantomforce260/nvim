@@ -17,6 +17,11 @@ local themes = {
     { "material", "material" },
     { "material-deep-ocean", "material" },
     { "material-palenight", "palenight" },
+    { "nightfox", "gruvbox_dark" },
+    { "duskfox", "gruvbox_dark" },
+    { "carbonfox", "dracula" },
+    { "nordfox", "nord" },
+    { "everforest", "everforest" },
 
     -- Vim themes
     { "slate", "auto" },
