@@ -30,7 +30,8 @@ return require("functions.git").plugin("Treesitter", {
                 "typescript",
                 "c_sharp",
                 "java",
-                "json"
+                "json",
+                "svelte"
             },
 
             -- Automatically install missing parsers when entering a buffer.
@@ -45,5 +46,16 @@ return require("functions.git").plugin("Treesitter", {
             -- more accurate than regex-based indentation for some languages.
             indent = { enable = true }
         })
-    end
+
+         vim.api.nvim_create_autocmd("FileType", {
+             callback = function(args)
+                 local lang = args.match
+                 if vim.treesitter.language.add(lang) then
+                     vim.treesitter.start(args.buf, lang)
+                 end
+             end,
+         })
+
+         vim.opt.rtp:append(vim.fs.joinpath(vim.fn.stdpath("data"), "lazy", "Treesitter", "runtime"))
+     end
 })

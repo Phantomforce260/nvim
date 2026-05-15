@@ -1,3 +1,5 @@
+vim.deprecate = function() end
+
 -- Configure vim options and keymaps
 vim.g.mapleader = ";"
 require("config.options")

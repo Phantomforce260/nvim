@@ -5,10 +5,8 @@ let g:my_themes = [
     \ 'habamax',
     \ 'desert',
     \ 'sorbet',
-    \ 'industry',
     \ 'lunaperche',
     \ 'retrobox',
-    \ 'unokai',
     \ 'zaibatsu',
     \ ]
 
@@ -18,7 +16,7 @@ let g:rand_index = rand() % len(g:my_themes)
 try
     execute 'colorscheme ' . g:my_themes[g:rand_index]
 catch
-    colorscheme industry
+    colorscheme habamax
 endtry
 
 set clipboard=unnamedplus   " Synchronizes the system clipboard with Neovim's clipboard
@@ -139,6 +137,21 @@ nnoremap <C-Left>  <C-w>h
 nnoremap <C-Down>  <C-w>j
 nnoremap <C-Up>    <C-w>k
 nnoremap <C-Right> <C-w>l
+
+" Detect and follow symlinks
+function! FollowSymlink()
+  let fname = expand('%')
+  if getftype(fname) == 'link'
+    let resolvedfile = resolve(fname)
+    " Replace current buffer's file with resolved path
+    exec 'file ' . fnameescape(resolvedfile)
+    " Reload the file from the new path
+    edit
+  endif
+endfunction
+
+" Run this every time a file is opened
+autocmd BufReadPost * call FollowSymlink()
 
 " Backspace function that removes brace pairs
 function! s:SmartBackspace()
