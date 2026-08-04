@@ -14,7 +14,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         "git",
         "clone",
         "--filter=blob:none",
-        "ssh://git@ssh.git.lunarflame.dev:2222/Neovim/Lazy.git",
+        "ssh://git@lunarflame.dev:2222/Neovim/Lazy.git",
         lazypath,
     })
 end
