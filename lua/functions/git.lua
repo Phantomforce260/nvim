@@ -1,6 +1,6 @@
 local M = {}
 
-local base = "ssh://git@git.lunarflame.dev:2222/Neovim/"
+local base = "ssh://git@lunarflame.dev:2222/Neovim/"
 
 function M.plugin(repo, opts)
     opts = opts or {}
