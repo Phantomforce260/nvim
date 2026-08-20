@@ -31,7 +31,11 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            -- LSP configurations are handled in mason-lspconfig setup
+            vim.lsp.config('kotlin_language_server', {
+                init_options = {
+                    storagePath = vim.fn.stdpath("cache") .. "/kotlin_language_server",
+                },
+            })
         end,
     },
     {

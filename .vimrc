@@ -140,14 +140,14 @@ nnoremap <C-Right> <C-w>l
 
 " Detect and follow symlinks
 function! FollowSymlink()
-  let fname = expand('%')
-  if getftype(fname) == 'link'
-    let resolvedfile = resolve(fname)
-    " Replace current buffer's file with resolved path
-    exec 'file ' . fnameescape(resolvedfile)
-    " Reload the file from the new path
-    edit
-  endif
+    let fname = expand('%')
+    if getftype(fname) == 'link'
+        let resolvedfile = resolve(fname)
+        " Replace current buffer's file with resolved path
+        exec 'file ' . fnameescape(resolvedfile)
+        " Reload the file from the new path
+        edit
+    endif
 endfunction
 
 " Run this every time a file is opened

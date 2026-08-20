@@ -24,9 +24,7 @@ end
 
 local function lualine_theme(opts)
     require('lualine').setup({
-        options = {
-            theme = opts.args
-        }
+        options = { theme = opts.args }
     })
 end
 

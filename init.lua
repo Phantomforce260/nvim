@@ -27,9 +27,7 @@ require("lazy").setup(
         { import = "themes" },
         { import = "lsp" },
     },
-    {
-        rocks = { enabled = false }
-    }
+    { rocks = { enabled = false } }
 )
 
 vim.cmd.colorscheme(ActiveThemes.vimTheme)

@@ -162,31 +162,31 @@ vim.api.nvim_set_keymap(
 
 vim.api.nvim_create_user_command(
     "W",
-    function() vim.cmd("w") end, 
+    function() vim.cmd("w") end,
     {}
 )
 
 vim.api.nvim_create_user_command(
     "Q",
-    function() vim.cmd("q") end, 
+    function() vim.cmd("q") end,
     {}
 )
 
 vim.api.nvim_create_user_command(
     "Wq",
-    function() vim.cmd("wq") end, 
+    function() vim.cmd("wq") end,
     {}
 )
 
 vim.api.nvim_create_user_command(
     "Qa",
-    function() vim.cmd("qa") end, 
+    function() vim.cmd("qa") end,
     {}
 )
 
 vim.api.nvim_create_user_command(
     "Wqa",
-    function() vim.cmd("wqa") end, 
+    function() vim.cmd("wqa") end,
     {}
 )
 
