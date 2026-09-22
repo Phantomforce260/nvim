@@ -31,11 +31,7 @@ return {
     {
         "neovim/nvim-lspconfig",
         config = function()
-            vim.lsp.config('kotlin_language_server', {
-                init_options = {
-                    storagePath = vim.fn.stdpath("cache") .. "/kotlin_language_server",
-                },
-            })
+            vim.lsp.config('kotlin_lsp', {})
         end,
     },
     {

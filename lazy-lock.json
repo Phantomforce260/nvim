@@ -34,6 +34,7 @@
   "cmp-nvim-lsp": { "branch": "main", "commit": "cbc7b02bb99fae35cb42f514762b89b5126651ef" },
   "cord.nvim": { "branch": "master", "commit": "283e4a5bdafd0d6187f28e5b739cccab6b4c9c64" },
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "llama.vim": { "branch": "master", "commit": "789c40a23f099134a58f5bbb623582f0bcf49bd4" },
   "lsp-zero.nvim": { "branch": "v2.x", "commit": "e31028f1dba6f7b68a8b9dd3347c489ee4cd3026" },
   "luasnip": { "branch": "master", "commit": "dae4f5aaa3574bd0c2b9dd20fb9542a02c10471c" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a324581a3c83fdacdb9804b79de1cbe00ce18550" },
